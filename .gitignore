@@ -1,0 +1,10 @@
+.classpath
+.project
+.settings/
+bin/
+.DS_Store
+target/
+db.properties
+.idea/
+*.iml
+test-output/

@@ -8,3 +8,4 @@ db.properties
 .idea/
 *.iml
 test-output/
+credentials.properties

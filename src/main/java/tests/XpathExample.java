@@ -65,13 +65,39 @@ public class XpathExample extends BaseTest {
         driver.findElement(By.xpath("//span[@class='user_name']"));
 
 
+        driver.findElement(By.xpath("/a[text()='Settings']")).click();
+
         //<a href="https://keybooks.ro/wp-admin/profile.php" class="icon icon-cog">Settings</a>
         /*
          //a[text()='Settings']
          */
         // text()--> referinta catra textul dintre tag-urile HTML
 
-        driver.findElement(By.xpath("/a[text()='Settings']")).click();
+        //contains()
+        WebElement recentOrderLink = driver.findElement(By.xpath("//a[contains(@href, 'orders')]"));
+
+        jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')",
+                recentOrderLink);
+
+        recentOrderLink.click();
+
+        WebElement ordersTableLink = driver.findElement(By.xpath("//th[contains(@class, 'orders-table__header')]/span[text()='Order']"));
+
+        jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')",
+                ordersTableLink);
+
+        //not()
+        WebElement dateTableHeader = driver.findElement(By.xpath("//table//span[not(contains(text(), 'Order')) and not(contains(text(), 'Status')) and not(contains(@class, 'woocommerce')) and not(contains(text(), 'Total')) and not(contains(text(), 'Actions')) ]"));
+
+        jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')",
+                dateTableHeader);
+
+        //index()
+        WebElement statusTable = driver.findElement(By.xpath("(//span[@class='nobr'])[3]"));
+
+        jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')",
+                statusTable);
+
     }
 
    //<a href="https://keybooks.ro/account/orders/">recent orders</a>
@@ -82,6 +108,7 @@ public class XpathExample extends BaseTest {
 
    //a[contains(@href, 'orders')]
     */
+
 
 
 }

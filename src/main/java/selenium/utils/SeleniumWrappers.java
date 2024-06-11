@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.TestException;
 
 import java.time.Duration;
 
@@ -32,6 +34,23 @@ public class SeleniumWrappers extends BaseTest{
 
     public void sendKeys(By locator, String text) {
         driver.findElement(locator).sendKeys(text);
+    }
+
+    public void hoverElement(By locator) {
+
+        try{
+           WebElement element = driver.findElement(locator);
+           Actions action = new Actions(driver);
+           action.moveToElement(element).perform();
+
+        }catch (Exception e) {
+            new TestException(e.getMessage());
+
+        }
+    }
+
+    public WebElement getWebElement(By locator) {
+        return driver.findElement(locator);
     }
 
 }

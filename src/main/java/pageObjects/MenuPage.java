@@ -20,6 +20,9 @@ public class MenuPage extends SeleniumWrappers {
     public By loginLink = By.linkText("Login");
     public By contactsLink = By.linkText("CONTACTS");
     public By shopLink = By.linkText("BOOKS");
+    public By blogLink = By.linkText("BLOG");
+    public By aboutLink = By.linkText("ABOUT");
+    public By blogSubMenuClassic = By.linkText("Classic");
 
     //WebElement loginButton = driver.findElement(By.linkText("Login"));
     //WebElement contactsButton = driver.findElement(By.linkText("CONTACTS"));

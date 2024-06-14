@@ -4,17 +4,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 import selenium.utils.SeleniumWrappers;
 
-public class ShopPage extends SeleniumWrappers {
+public class ShopPage extends SeleniumWrappers{
 
     public WebDriver driver;
 
+
     public ShopPage(WebDriver driver) {
-        this.driver = driver;
+        this.driver =driver;
     }
 
+
     public By sortingList = By.name("orderby");
+    public By filterSliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
+    public By filterSliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
+
 
     public void selectByValue(String value) {
         WebElement element = driver.findElement(sortingList);
@@ -23,19 +29,11 @@ public class ShopPage extends SeleniumWrappers {
 
     }
 
-
-    public void selectByVisibleText(String value) {
+    public void selectByVisbileText(String value) {
         WebElement element = driver.findElement(sortingList);
         Select select = new Select(element);
         select.selectByVisibleText(value);
 
-    }
-
-    public String getSelectedOption() {
-        WebElement element = driver.findElement(sortingList);
-        Select select = new Select(element);
-       // select.getFirstSelectedOption().getText();
-        return select.getFirstSelectedOption().getText();
     }
 
     public void selectByIndex(int index) {
@@ -44,4 +42,15 @@ public class ShopPage extends SeleniumWrappers {
         select.selectByIndex(index);
 
     }
+
+
+
+    public String getSelectedOption() {
+        WebElement element = driver.findElement(sortingList);
+        Select select = new Select(element);
+        return select.getFirstSelectedOption().getText();
+    }
+
+
+
 }

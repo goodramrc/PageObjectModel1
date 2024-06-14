@@ -19,7 +19,7 @@ public class DropDownTest extends BaseTest {
     public void selectByVisibleTextTest() {
 
         app.click(app.menu.shopLink);
-        app.shop.selectByVisibleText("Sort by popularity");
+        app.shop.selectByVisbileText("Sort by popularity");
         assertEquals(app.shop.getSelectedOption(), "Sort by popularity");
     }
 

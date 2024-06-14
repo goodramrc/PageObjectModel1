@@ -3,9 +3,10 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import selenium.utils.SeleniumWrappers;
 
-public class MenuPage extends SeleniumWrappers {
+public class MenuPage extends SeleniumWrappers{
 
     public WebDriver driver;
 
@@ -23,20 +24,23 @@ public class MenuPage extends SeleniumWrappers {
     public By blogLink = By.linkText("BLOG");
     public By aboutLink = By.linkText("ABOUT");
     public By blogSubMenuClassic = By.linkText("Classic");
+    public By searchIcon = By.cssSelector("button[class*='icon-search']");
+    public By searchInput = By.cssSelector("input[class='search_field']");
 
     //WebElement loginButton = driver.findElement(By.linkText("Login"));
     //WebElement contactsButton = driver.findElement(By.linkText("CONTACTS"));
 
-    //metode specifice functionalitaii pe care o au
+    //metode specifice functionalitatii pe care o au
 	/*public WebElement loginButton() {
 		return driver.findElement(By.linkText("Login"));
 	}*/
 
     //loginButton().click()
 
-//    public void navigateTo(By locator) {
-//        driver.findElement(locator).click();
-//    }
+/*	public void navigateTo(By locator) {
+		driver.findElement(locator).click();
+	} */
+
     //navigateTo(contactsLink)
     //navigateTo(loginLink)
 

@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class DropDownTest extends BaseTest {
 
-    @Test(priority=1)
+    @Test(priority=1, groups = "ShopFunctionality")
     public void selectByValueTest() {
 
         app.click(app.menu.shopLink);
@@ -15,7 +15,7 @@ public class DropDownTest extends BaseTest {
         assertEquals(app.shop.getSelectedOption(), "Sort by latest");
     }
 
-    @Test(priority=2)
+    @Test(priority=2, groups = "ShopFunctionality")
     public void selectByVisibleTextTest() {
 
         app.click(app.menu.shopLink);
@@ -23,7 +23,7 @@ public class DropDownTest extends BaseTest {
         assertEquals(app.shop.getSelectedOption(), "Sort by popularity");
     }
 
-    @Test(priority=3)
+    @Test(priority=3, groups = "ShopFunctionality")
     public void selectByIndex() {
 
         app.click(app.menu.shopLink);

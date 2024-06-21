@@ -19,12 +19,13 @@ public class LoginPage extends SeleniumWrappers {
     public By successLoginMsg = By.cssSelector("div[class*='sc_infobox_style_success']");
     public By errorLoginMsg = By.cssSelector("div[class*='sc_infobox_style_error']");
     public By logoutBtn = By.linkText("Logout");
-
+    public By closeLoginPopUp = By.className("popup_close");
 
     //metode specifice
     public void loginInApp(String username, String password) {
-
+        driver.findElement(userField).clear();
         driver.findElement(userField).sendKeys(username);
+        driver.findElement(passField).clear();
         driver.findElement(passField).sendKeys(password);
         //driver.findElement(submitButton).click();
         click(submitButton);

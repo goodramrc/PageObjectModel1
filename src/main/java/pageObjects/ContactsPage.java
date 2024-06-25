@@ -18,6 +18,10 @@ public class ContactsPage extends SeleniumWrappers {
     public By subjectField = By.cssSelector("input[name='your-s']");
     public By messageField = By.cssSelector("textarea[name='your-message']");
     public By submitBtn = By.cssSelector("input[value='Send Message']");
+    public By zoomInBtn = By.cssSelector("button[title=]");
+    public By mapFrame = By.tagName("iframe");
+
+
 
     public void sendMessage(String name, String email, String subject, String message) {
 
